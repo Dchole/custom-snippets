@@ -1,0 +1,62 @@
+{
+  "Base Component Template": {
+    "prefix": "rtc",
+    "body": [
+      "const ${1:$TM_FILENAME_BASE} = () => {",
+      "return <>",
+      "\t$0",
+      "</>",
+      "}",
+      "\nexport default ${1:$TM_FILENAME_BASE}"
+    ],
+    "description": "Base React component with no props, imports or types"
+  },
+  "Typed Component": {
+    "prefix": "rttc",
+    "body": [
+      "const ${1:$TM_FILENAME_BASE}:React.FC = ({children}) => {",
+      "return <>",
+      "\t$0",
+      "</>",
+      "}",
+      "\nexport default ${1:$TM_FILENAME_BASE}"
+    ],
+    "description": "Base React component with no props, but with children components"
+  },
+  "Component With Props": {
+    "prefix": "rtcp",
+    "body": [
+      "interface I${1:$TM_FILENAME_BASE}Props {",
+      "\t$2",
+      "}",
+      "\nconst ${1:$TM_FILENAME_BASE}:React.FC<I${1:$TM_FILENAME_BASE}Props> = ({$3}) => {",
+      "return <>",
+      "\t$0",
+      "</>",
+      "}",
+      "\nexport default ${1:$TM_FILENAME_BASE}"
+    ],
+    "description": "React component with props and interface definition templates"
+  },
+  "Custom Hook": {
+    "prefix": "ch",
+    "body": [
+      "const use${1:$TM_FILENAME_BASE} = () => {",
+      "\t$0",
+      "return true",
+      "}",
+      "\nexport default use${1:$TM_FILENAME_BASE}"
+    ],
+    "description": "Basic custom hook"
+  },
+  "Component Interface": {
+    "prefix": "ri",
+    "body": ["interface I${1:$TM_FILENAME_BASE}Props {", "\t$2", "}"],
+    "description": "Interface definition for react component"
+  },
+  "Basic useEffect hook": {
+    "prefix": "ueh",
+    "body": ["useEffect(() => {$1}, [$2])"],
+    "description": "Basic useEffect hook without return function"
+  }
+}

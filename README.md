@@ -125,10 +125,8 @@ And with this, I have
 
 ![Example gif](gifs/example.gif)
 
-See [more examples]() in my [git repo]()
+See [more examples](https://github.com/Dchole/custom-snippets/blob/master/my-custom-snippet.json) in my [git repo](https://github.com/Dchole/custom-snippets)
 
 ## Conclusion
 
 I'll like to clarify that, the snippet you're looking for probably exists in an extension but it's a great experience to create your own custom snippet 😊
-
-I've shared [my snippet file]() on github so be free to checkout and customise it if you want or see the [vscode guide]() to create yours from scratch

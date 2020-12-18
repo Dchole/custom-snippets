@@ -1,6 +1,6 @@
 # Improve your developer experience with VSCode snippets
 
-Code snippets are templates that make it easier to enter repeating code patterns. VSCode's snippets are jsut on big part of my coding experience. They make it super easy to get away with some boilerplate code.
+Code snippets are templates that make it easier to enter repeating code patterns. VSCode's snippets are just one big part of my coding experience. They make it super easy to get away with some boilerplate code. There are code snippet extensions for every language.
 [You can find VSCode snippets for your language](https://marketplace.visualstudio.com/search?target=VSCode&category=Snippets&sortBy=Installs)
 
 ## Table of Content
@@ -16,9 +16,9 @@ Code snippets are templates that make it easier to enter repeating code patterns
 
 Using [React](https://reactjs.org) for a long while, I've been using [an extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) for my snippets. It was great until I started using [NextJS](https://nextjs.org). [NextJS](https://nextjs.org) doesn't require `import React from "react"` at the top of every react file so it was felt a bit annoying to remove the that line every time I used the snippet to start a file.
 
-React 17 was released and no more did we need `import React from "react"` so the extension became a bit obsolete to me 😑.
+React 17 was released and we didn't need `import React from "react"` anymore so the extension became a bit obsolete to me 😑.
 
-I needed more snippets too. I needed snippets for typescript and custom hooks.
+I needed more snippets too. I needed snippets for typescriptreact and custom hooks 😏.
 
 ## How to create custom snippets
 
@@ -29,7 +29,7 @@ To create or edit your own snippets,
 - Go to **File** > **Preferences** > **User Snippets** ( **Code** > **Preferences** > **User Snippets** on macOS)
 - Select the language for which the snippet should appear (in my case it's **typescriptreact**) or the **New Global Snippets** file option if they should appear for all languages.
 
-Snippets files are written in JSON, support C-style comments, and can define an unlimited number of snippets.
+Snippets files are written in JSON, support C-style comments and can define an unlimited number of snippets.
 
 Below is an example of a for loop snippet for JavaScript:
 
@@ -60,7 +60,7 @@ The body of a snippet can use special constructs to control cursors and the text
 With tabstops, you can make the editor cursor move inside a snippet. Use `$1`, `$2` to specify cursor locations. The number is the order in which tabstops will be visited, whereas `$0` denotes the final cursor position.
 
 From the example above we can produce the result in this gif
-![Tapstop Example](assets/tapstops.gif)
+![Tapstop Example](gifs/tapstops.gif)
 
 As you can see in the gif, the cursor starts from `array`, then onto `element`, and then finally inside the curly brackets
 
@@ -68,7 +68,7 @@ As you can see in the gif, the cursor starts from `array`, then onto `element`, 
 
 Placeholders are tapstops with values, like `${1:array}` from the above example. The number in `${1:array}` is the tapstop and the string after the colon is the default value.
 
-![Placeholder Example](assets/placeholder.gif)
+![Placeholder Example](gifs/placeholder.gif)
 
 ### Variables
 
@@ -77,6 +77,8 @@ Variables are written as `$variable_name` or `${variable_name:default}`. When a 
 Variables played a signifant role in my snippets. I'd like you [read more on variables](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables) yourself.
 
 I only used one variable (`TM_FILENAME_BASE`) in my snippets, however, I find the rest to be useful, just not in my use case.
+
+This is an example from my custom snippets
 
 ```json
 {
@@ -95,4 +97,37 @@ I only used one variable (`TM_FILENAME_BASE`) in my snippets, however, I find th
 }
 ```
 
-From the example above, I simply get;
+From the body, `${1:$TM_FILENAME_BASE}` is the placeholder, the `1` is the tapstop and it indicates the start and the `$TM_FILENAME_BASE` is the variable for filename.
+
+Another example with typescript interface
+
+```json
+{
+  "Component With Props": {
+    "prefix": "rtcp",
+    "body": [
+      "interface I${1:$TM_FILENAME_BASE}Props {",
+      "\t$2",
+      "}",
+      "\nconst ${1:$TM_FILENAME_BASE}:React.FC<I${1:$TM_FILENAME_BASE}Props> = ({$3}) => {",
+      "return <>",
+      "\t$0",
+      "</>",
+      "}",
+      "\nexport default ${1:$TM_FILENAME_BASE}"
+    ],
+    "description": "React component with props and interface definition templates"
+  }
+}
+```
+
+And with this, I have
+![Example gif](gifs/example.gif)
+
+See [more examples]() in my [git repo]()
+
+## Conclusion
+
+I'll like to clarify that, the snippet you're looking for probably exists in an extension but it's a great experience to create your own custom snippet 😊
+
+I've shared [my snippet file]() on github so be free to checkout and customise it if you want or see the [vscode guide]() to create yours from scratch

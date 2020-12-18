@@ -14,11 +14,11 @@ Code snippets are templates that make it easier to enter repeating code patterns
 
 ## Why I created custom snippets
 
-Using [React](https://reactjs.org) for a long while, I've been using [an extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) for my snippets. It was great until I started using [NextJS](https://nextjs.org). [NextJS](https://nextjs.org) doesn't require `import React from "react"` at the top of every react file so it was felt a bit annoying to remove the that line every time I used the snippet to start a file.
+Using [React](https://reactjs.org) for a long while, I've been using [an extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) for my snippets. It was great until I started using [NextJS](https://nextjs.org). [NextJS](https://nextjs.org) doesn't require `import React from "react"` at the top of every react file so it was felt a bit annoying to remove that line every time I used the snippet to start a file.
 
 React 17 was released and we didn't need `import React from "react"` anymore so the extension became a bit obsolete to me 😑.
 
-I needed more snippets too. I needed snippets for typescriptreact and custom hooks 😏.
+I needed more snippets too. I needed snippets for `typescriptreact` and custom hooks 😏.
 
 ## How to create custom snippets
 
@@ -74,7 +74,7 @@ Placeholders are tapstops with values, like `${1:array}` from the above example.
 
 Variables are written as `$variable_name` or `${variable_name:default}`. When a variable isn't set, its default or the empty string is inserted.
 
-Variables played a signifant role in my snippets. I'd like you [read more on variables](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables) yourself.
+Variables played a significant role in my snippets. I'd like you [read more on variables](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables) yourself.
 
 I only used one variable (`TM_FILENAME_BASE`) in my snippets, however, I find the rest to be useful, just not in my use case.
 
@@ -97,7 +97,7 @@ This is an example from my custom snippets
 }
 ```
 
-From the body, `${1:$TM_FILENAME_BASE}` is the placeholder, the `1` is the tapstop and it indicates the start and the `$TM_FILENAME_BASE` is the variable for filename.
+From the body, `${1:$TM_FILENAME_BASE}` is the placeholder, the `1` is the tapstop and it indicates the start and the `$TM_FILENAME_BASE` is the variable for the filename.
 
 Another example with typescript interface
 

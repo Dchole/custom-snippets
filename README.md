@@ -122,6 +122,7 @@ Another example with typescript interface
 ```
 
 And with this, I have
+
 ![Example gif](gifs/example.gif)
 
 See [more examples]() in my [git repo]()
